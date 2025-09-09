@@ -72,3 +72,5 @@ interface:
   webSearch: false
   fileSearch: false
   fileCitations: false
+  presets: false
+
