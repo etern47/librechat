@@ -21,7 +21,7 @@ endpoints:
 # AUTH AGENT GUIDED MCP
 ##
 mcpServers:
-  google-docs:
+  g-docs:
     type: streamable-http
     url: "https://mcp.composio.dev/composio/server/${GOOGLE_DOCS_SERVER_UUID}/mcp?include_composio_helper_actions=true&user_id={{LIBRECHAT_USER_ID}}&email={{LIBRECHAT_USER_EMAIL}}"
     headers:
@@ -31,7 +31,7 @@ mcpServers:
     requiresOAuth: true
     serverInstructions: true
     allowServerMessages: true
-  google-calendar:
+  g-calendar:
     type: streamable-http
     url: "https://mcp.composio.dev/composio/server/${GOOGLE_CALENDAR_SERVER_UUID}/mcp?include_composio_helper_actions=true&user_id={{LIBRECHAT_USER_ID}}&email={{LIBRECHAT_USER_EMAIL}}"
     headers:
@@ -41,7 +41,7 @@ mcpServers:
     requiresOAuth: true
     serverInstructions: true
     allowServerMessages: true
-  google-drive:
+  g-drive:
     type: streamable-http
     url: "https://mcp.composio.dev/composio/server/${GOOGLE_DRIVE_SERVER_UUID}/mcp?include_composio_helper_actions=true&user_id={{LIBRECHAT_USER_ID}}&email={{LIBRECHAT_USER_EMAIL}}"
     headers:
@@ -51,7 +51,7 @@ mcpServers:
     requiresOAuth: true
     serverInstructions: true
     allowServerMessages: true
-  google-meet:
+  g-meet:
     type: streamable-http
     url: "https://mcp.composio.dev/composio/server/${GOOGLE_MEET_SERVER_UUID}/mcp?include_composio_helper_actions=true&user_id={{LIBRECHAT_USER_ID}}&email={{LIBRECHAT_USER_EMAIL}}"
     headers:
