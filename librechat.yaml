@@ -65,7 +65,7 @@ mcpServers:
 
 interface:
   parameters: false
-  sidePanel: false
+  sidePanel: true
   prompts: false
   bookmarks: false
   runCode: false
