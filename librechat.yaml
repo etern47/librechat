@@ -1,0 +1,74 @@
+version: 1.2.8
+
+cache: true
+fileStrategy: "s3"
+
+endpoints:
+  custom:
+    - name: "OpenRouter"
+      apiKey: "${OPENROUTER_KEY}" # NOT OPENROUTER_API_KEY
+      baseURL: "https://openrouter.ai/api/v1"
+      models:
+        default: ["openai/gpt-4.1-mini"]
+        fetch: true
+      titleConvo: true
+      titleModel: "openai/gpt-4.1-mini"
+      dropParams: ["stop"]
+      modelDisplayLabel: "OpenRouter"
+
+
+###
+# AUTH AGENT GUIDED MCP
+##
+mcpServers:
+  google-docs:
+    type: streamable-http
+    url: "https://mcp.composio.dev/composio/server/${GOOGLE_DOCS_SERVER_UUID}/mcp?include_composio_helper_actions=true&user_id={{LIBRECHAT_USER_ID}}&email={{LIBRECHAT_USER_EMAIL}}"
+    headers:
+      X-Composio-Api-Key: "${COMPOSIO_API_KEY}"
+    timeout: 45000
+    initTimeout: 15000
+    requiresOAuth: true
+    serverInstructions: true
+    allowServerMessages: true
+  google-calendar:
+    type: streamable-http
+    url: "https://mcp.composio.dev/composio/server/${GOOGLE_CALENDAR_SERVER_UUID}/mcp?include_composio_helper_actions=true&user_id={{LIBRECHAT_USER_ID}}&email={{LIBRECHAT_USER_EMAIL}}"
+    headers:
+      X-Composio-Api-Key: "${COMPOSIO_API_KEY}"
+    timeout: 45000
+    initTimeout: 15000
+    requiresOAuth: true
+    serverInstructions: true
+    allowServerMessages: true
+  google-drive:
+    type: streamable-http
+    url: "https://mcp.composio.dev/composio/server/${GOOGLE_DRIVE_SERVER_UUID}/mcp?include_composio_helper_actions=true&user_id={{LIBRECHAT_USER_ID}}&email={{LIBRECHAT_USER_EMAIL}}"
+    headers:
+      X-Composio-Api-Key: "${COMPOSIO_API_KEY}"
+    timeout: 45000
+    initTimeout: 15000
+    requiresOAuth: true
+    serverInstructions: true
+    allowServerMessages: true
+  google-meet:
+    type: streamable-http
+    url: "https://mcp.composio.dev/composio/server/${GOOGLE_MEET_SERVER_UUID}/mcp?include_composio_helper_actions=true&user_id={{LIBRECHAT_USER_ID}}&email={{LIBRECHAT_USER_EMAIL}}"
+    headers:
+      X-Composio-Api-Key: "${COMPOSIO_API_KEY}"
+    timeout: 45000
+    initTimeout: 15000
+    requiresOAuth: true
+    serverInstructions: true
+    allowServerMessages: true
+
+
+interface:
+  parameters: false
+  sidePanel: false
+  prompts: false
+  bookmarks: false
+  runCode: false
+  webSearch: false
+  fileSearch: false
+  fileCitations: false
